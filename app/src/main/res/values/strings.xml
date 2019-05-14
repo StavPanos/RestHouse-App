@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">SDY51_E4</string>
+    <string name="return_button">ΕΠΙΣΤΡΟΦΗ</string>
+    <string name="exit_button">ΤΕΡΜΑΤΙΣΜΟΣ</string>
+    <string name="notifications_title">ΥΠΕΝΘΥΜΙΣΕΙΣ</string>
+    <string name="notifications_button">Υπενθυμίσεις</string>
+    <string name="new_notification">Νέα υπενθύμιση</string>
+    <string name="time_tag">Ώρα</string>
+    <string name="title_tag">Τίτλος</string>
+    <string name="date_tag">Ημέρα</string>
+    <string name="category_tag">Κατηγορία</string>
+    <string name="health_tag">Υγεία </string>
+    <string name="care_tag">Φροντίδα </string>
+    <string name="event_tag">Εκδηλώσεις </string>
+    <string name="other_tag">Άλλο </string>
+    <string name="setDateTimeText">Ορίστε ώρα και ημέρα υπενθύμισης</string>
+    <string name="pick_time_text">Διάλεξε Ώρα</string>
+    <string name="pick_date_text">Διάλεξε Ημερομηνία</string>
+    <string name="time_hint">ΩΩ:ΛΛπμ/αμ</string>
+    <string name="date_hint">ΗΗ/ΜΜ/ΕΕ</string>
+    <string name="submit">Καταχώρηση</string>
+
+    <string name="category_prompt">Διάλεξε μια κατηγορία</string>
+    <string name="cancel">Ακύρωση</string>
+    <string name="selectDateAndTime">Επέλεξε ημερομηνία και ώρα</string>
+    <string name="selectCategory">Επιλογή κατηγορίας</string>
+    <string name="notifyCurator">Να ειδοποιηθεί ο φροντιστής μου</string>
+    <string name="notifyEveryday">Υπενθίμηση Καθημερινά</string>
+    <string name="notifyRelatives">Να ειδοποιηθούν οι δικοί μου</string>
+    <string name="description">Περιγραφή με λεπτομέρειες</string>
+    <string name="enterTitle">Εισάγεται τίτλο</string>
+
+    <string-array name="categories">
+        <item>Υγεία</item>
+        <item>Φροντίδα</item>
+        <item>Εκδηλώσεις</item>
+        <item>Άλλο</item>
+    </string-array>
+</resources>
