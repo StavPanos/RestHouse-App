@@ -58,7 +58,7 @@ public class NotificationTableActivity extends AppCompatActivity {
             edit.setTag(count++);
 
             title.setWidth(700);
-            date.setWidth(400);
+            date.setWidth(450);
             time.setWidth(400);
             category.setWidth(400);
 

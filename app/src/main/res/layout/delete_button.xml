@@ -8,6 +8,6 @@
     android:text="Διαγραφή"
     android:textAllCaps="false"
     android:textColor="@android:color/background_light"
-    android:textSize="24sp" >
+    android:textSize="36sp" >
 
 </Button>

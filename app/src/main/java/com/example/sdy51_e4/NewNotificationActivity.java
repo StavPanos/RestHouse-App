@@ -10,8 +10,6 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
@@ -21,8 +19,7 @@ public class NewNotificationActivity extends AppCompatActivity {
     Button selectDateButton, selectTimeButton, submitButton;
     TextView date, time;
     EditText title;
-    RadioGroup radioGroup;
-    RadioButton category;
+    Button health, event, care, other;
     int year;
     int month;
     int dayOfMonth;
@@ -47,7 +44,6 @@ public class NewNotificationActivity extends AppCompatActivity {
         selectTimeButton = findViewById(R.id.selectTimeButton);
         time = findViewById(R.id.timeText);
         title = findViewById(R.id.titleEditText);
-        radioGroup = findViewById(R.id.categoryTags);
         submitButton = findViewById(R.id.submit);
 
         selectDateButtonSetListener();
@@ -106,9 +102,7 @@ public class NewNotificationActivity extends AppCompatActivity {
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int radioId = radioGroup.getCheckedRadioButtonId();
-                category = findViewById(radioId);
-                db.addNotification(new Notification(title.getText().toString(),date.getText().toString(),time.getText().toString(),category.getText().toString()));
+                db.addNotification(new Notification(title.getText().toString(),date.getText().toString(),time.getText().toString(),"category"));
                 startActivity(new Intent(NewNotificationActivity.this, NotificationTableActivity.class));
             }
         });

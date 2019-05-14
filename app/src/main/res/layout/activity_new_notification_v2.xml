@@ -8,14 +8,14 @@
 
     <TextView
         android:id="@+id/title"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
         android:text="@string/new_notification"
         android:textAlignment="center"
         android:textColor="@android:color/holo_orange_dark"
         android:textSize="50sp"
         android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -157,42 +157,42 @@
 
     <DatePicker
         android:id="@+id/datePicker"
-        android:layout_width="561dp"
-        android:layout_height="214dp"
-        android:layout_marginEnd="8dp"
+        style="@android:style/Widget.DatePicker"
+        android:layout_width="315dp"
+        android:layout_height="194dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
         android:datePickerMode="spinner"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/timePicker"
         app:layout_constraintTop_toBottomOf="@+id/date" />
 
     <TextView
         android:id="@+id/date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="32dp"
+        android:layout_marginEnd="60dp"
         android:text="@string/selectDateAndTime"
         android:textColor="@color/TextColorBlue"
         android:textSize="36sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/title" />
 
     <TimePicker
         android:id="@+id/timePicker"
-        android:layout_width="561dp"
-        android:layout_height="242dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_width="315dp"
+        android:layout_height="194dp"
+        android:layout_marginTop="32dp"
         android:timePickerMode="spinner"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/datePicker" />
+        app:layout_constraintTop_toBottomOf="@+id/date" />
 
     <Button
         android:id="@+id/submit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
         android:layout_marginEnd="40dp"
+        android:layout_marginBottom="32dp"
         android:background="@android:color/holo_orange_dark"
         android:onClick="submitNotification"
         android:text="@string/submit"
@@ -200,15 +200,15 @@
         android:textColor="@android:color/background_light"
         android:textSize="40sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/timePicker" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
         android:id="@+id/cancel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
+        android:layout_marginBottom="32dp"
         android:background="@android:color/holo_orange_dark"
         android:onClick="cancel"
         android:text="@string/cancel"
@@ -216,7 +216,7 @@
         android:textColor="@android:color/background_light"
         android:textSize="40sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/submit"
-        app:layout_constraintTop_toBottomOf="@+id/timePicker" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/submit" />
 
 </android.support.constraint.ConstraintLayout>

@@ -24,7 +24,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="32dp"
         android:text="@string/category_tag"
         android:textColor="@color/TextColorBlue"
         android:textSize="45sp"
@@ -83,56 +83,102 @@
         app:layout_constraintStart_toEndOf="@+id/titleLabel"
         app:layout_constraintTop_toBottomOf="@+id/categoryTags" />
 
-    <RadioGroup
+    <RelativeLayout
         android:id="@+id/categoryTags"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="32dp"
         android:labelFor="@id/title"
         android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/categoryLabel"
         app:layout_constraintTop_toBottomOf="@+id/title">
 
-        <RadioButton
+        <Button
             android:id="@+id/healthTag"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="30dp"
+            android:background="@android:color/holo_orange_dark"
+            android:checked="true"
+            android:padding="5dp"
+            android:paddingStart="5dp"
+            android:paddingLeft="5dp"
+            android:paddingTop="5dp"
+            android:paddingEnd="5dp"
+            android:paddingRight="5dp"
+            android:paddingBottom="5dp"
             android:scrollbarSize="10dp"
             android:text="@string/health_tag"
-            android:textSize="45sp"
-            android:textStyle="bold"
-            android:checked="true"/>
-
-        <RadioButton
-            android:id="@+id/otherTag"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/event_tag"
+            android:textAllCaps="false"
+            android:textColor="@android:color/background_light"
             android:textSize="45sp"
             android:textStyle="bold" />
 
-        <RadioButton
+        <Button
             android:id="@+id/eventTag"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/care_tag"
+            android:layout_marginStart="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_toEndOf="@id/careTag"
+            android:background="@android:color/holo_orange_dark"
+            android:padding="5dp"
+            android:paddingStart="5dp"
+            android:paddingLeft="5dp"
+            android:paddingTop="5dp"
+            android:paddingEnd="5dp"
+            android:paddingRight="5dp"
+            android:paddingBottom="5dp"
+            android:text="@string/event_tag"
+            android:textAllCaps="false"
+            android:textColor="@android:color/background_light"
             android:textSize="45sp"
             android:textStyle="bold" />
 
-        <RadioButton
+        <Button
             android:id="@+id/careTag"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/other_tag"
+            android:layout_marginStart="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_toEndOf="@+id/healthTag"
+            android:background="@android:color/holo_orange_dark"
+            android:padding="5dp"
+            android:paddingStart="5dp"
+            android:paddingLeft="5dp"
+            android:paddingTop="5dp"
+            android:paddingEnd="5dp"
+            android:paddingRight="5dp"
+            android:paddingBottom="5dp"
+            android:text="@string/care_tag"
+            android:textAllCaps="false"
+            android:textColor="@android:color/background_light"
             android:textSize="45sp"
             android:textStyle="bold" />
 
-    </RadioGroup>
+        <Button
+            android:id="@+id/otherTag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_toEndOf="@id/eventTag"
+            android:background="@android:color/holo_orange_dark"
+            android:padding="5dp"
+            android:paddingStart="5dp"
+            android:paddingLeft="5dp"
+            android:paddingTop="5dp"
+            android:paddingEnd="5dp"
+            android:paddingRight="5dp"
+            android:paddingBottom="5dp"
+            android:text="@string/other_tag"
+            android:textAllCaps="false"
+            android:textColor="@android:color/background_light"
+            android:textSize="45sp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
 
     <TextView
         android:id="@+id/setDateTimeText"
