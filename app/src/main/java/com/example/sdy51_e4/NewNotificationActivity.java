@@ -18,16 +18,10 @@ import java.util.Calendar;
 import java.util.List;
 
 public class NewNotificationActivity extends AppCompatActivity {
-    Button selectDateButton, selectTimeButton, submitButton;
+    Button selectDateButton, selectTimeButton, submitButton, health, event, care, other;
     TextView date, time;
     EditText title;
-    Button health, event, care, other;
-    int year;
-    int month;
-    int dayOfMonth;
-    int currentHour;
-    int currentMinute;
-    String amPm;
+    int year, month, dayOfMonth, currentHour, currentMinute;
     String tag;
     Calendar calendar;
     DatePickerDialog datePickerDialog;

@@ -12,7 +12,7 @@
         <activity android:name=".NewNotificationActivityV2" android:screenOrientation="landscape" />
         <activity android:name=".NewNotificationActivity" android:screenOrientation="landscape" />
         <activity android:name=".NotificationTableActivity" android:screenOrientation="landscape" />
-        <activity android:name=".NotificationActivity" />
+        <activity android:name=".NotificationActivity" android:screenOrientation="landscape"/>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
