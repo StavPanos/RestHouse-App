@@ -1,3 +1,4 @@
+
 package com.example.sdy51_e4;
 
 import android.support.v7.app.AppCompatActivity;
@@ -7,7 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
-import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -33,13 +33,13 @@ public class NotificationTableActivity extends AppCompatActivity {
         refreshNotificationTable();
     }
 
-    private void refreshNotificationTable(){
+    private void refreshNotificationTable() {
         Log.d("Reading: ", "Reading all notifications..");
         notifications = db.getAllNotifications();
         int count = 0;
         for (Notification ntf : notifications) {
             String log = "Id: " + ntf.getId() + " ,Title: " + ntf.getTitle() + " ,Date: " +
-                    ntf.getDate()+ ",Time:" + ntf.getTime() + ",Category" + ntf.getCategory();
+                    ntf.getDate() + ",Time:" + ntf.getTime() + ",Category" + ntf.getCategory();
             Log.d("Notification: ", log);
 
             LinearLayout newNotificationRow = new LinearLayout(this);
@@ -52,27 +52,24 @@ public class NotificationTableActivity extends AppCompatActivity {
             TextView category = (TextView) getLayoutInflater().inflate(R.layout.notification_text_view, null);
 
             Button delete = (Button) getLayoutInflater().inflate(R.layout.delete_button, null);
-            Button edit = (Button) getLayoutInflater().inflate(R.layout.edit_button, null);
 
-            delete.setTag(count);
-            edit.setTag(count++);
-
-            title.setWidth(700);
-            date.setWidth(450);
-            time.setWidth(400);
-            category.setWidth(400);
+            delete.setTag(count++);
 
             title.setText(ntf.getTitle());
             date.setText(ntf.getDate());
             time.setText(ntf.getTime());
             category.setText(ntf.getCategory());
 
+            title.setWidth(650);
+            date.setWidth(450);
+            time.setWidth(400);
+            category.setWidth(430);
+
             newNotificationRow.addView(category);
             newNotificationRow.addView(date);
             newNotificationRow.addView(time);
             newNotificationRow.addView(title);
             newNotificationRow.addView(delete);
-            newNotificationRow.addView(edit);
 
             delete.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -85,19 +82,9 @@ public class NotificationTableActivity extends AppCompatActivity {
                     viewList.clear();
                     refreshNotificationTable();
 
-                    Toast.makeText(getApplicationContext(),"Η υπενθύμιση διαγράφηκε",Toast.LENGTH_SHORT).show();
-                }
-            });
-
-            edit.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-
-                    //PopupWindow popw = new PopupWindow(new LinearLayout(con));
-
+                    Toast.makeText(getApplicationContext(), "Η υπενθύμιση διαγράφηκε", Toast.LENGTH_SHORT).show();
                 }
             });
         }
     }
-
 }

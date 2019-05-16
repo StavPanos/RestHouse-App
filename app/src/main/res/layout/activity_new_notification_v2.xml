@@ -19,63 +19,29 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Spinner
-        android:id="@+id/spinner"
-        android:layout_width="128dp"
-        android:layout_height="47dp"
-        android:layout_marginStart="24dp"
-        android:entries="@array/categories"
-        android:prompt="@string/category_prompt"
-        android:textColor="@color/TextColorBlue"
-        android:textAlignment="center"
-        android:textSize="32sp"
-        app:layout_constraintStart_toEndOf="@+id/categoryText"
-        app:layout_constraintTop_toBottomOf="@+id/title" />
-
     <TextView
         android:id="@+id/addtitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:textColor="@color/TextColorBlue"
+        android:layout_marginTop="32dp"
         android:text="@string/enterTitle"
+        android:textColor="@color/TextColorBlue"
         android:textSize="36sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner" />
+        app:layout_constraintTop_toBottomOf="@+id/categoryTags" />
 
     <EditText
         android:id="@+id/titleEditText"
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
         android:background="@drawable/cell_border"
         android:textColor="@color/TextColorBlue"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/addtitle" />
-
-    <EditText
-        android:id="@+id/detailsEditText"
-        android:layout_width="562dp"
-        android:layout_height="200dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/cell_border"
-        android:textAlignment="viewStart"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/details" />
-
-    <TextView
-        android:id="@+id/details"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:text="@string/description"
-        android:textColor="@color/TextColorBlue"
-        android:textStyle="bold"
-        android:textSize="36sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/titleEditText" />
 
     <TextView
         android:id="@+id/notifyRelatives"
@@ -84,9 +50,9 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:text="@string/notifyRelatives"
-        android:textStyle="bold"
         android:textColor="@color/TextColorBlue"
         android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/notifyCurator" />
 
@@ -95,13 +61,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="32dp"
         android:text="@string/notifyEveryday"
         android:textColor="@color/TextColorBlue"
-        android:textStyle="bold"
         android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/detailsEditText" />
+        app:layout_constraintTop_toBottomOf="@+id/titleEditText" />
 
     <TextView
         android:id="@+id/notifyCurator"
@@ -111,24 +77,24 @@
         android:layout_marginTop="16dp"
         android:text="@string/notifyCurator"
         android:textColor="@color/TextColorBlue"
-        android:textStyle="bold"
         android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/everydayNotification" />
 
     <Switch
         android:id="@+id/everydaySwitch"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="32dp"
         app:layout_constraintStart_toEndOf="@+id/everydayNotification"
-        app:layout_constraintTop_toBottomOf="@+id/detailsEditText" />
+        app:layout_constraintTop_toBottomOf="@+id/titleEditText" />
 
     <Switch
         android:id="@+id/curatorSwitch"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="44dp"
+        android:layout_height="38dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="16dp"
         app:layout_constraintStart_toEndOf="@+id/notifyCurator"
@@ -137,7 +103,7 @@
     <Switch
         android:id="@+id/relativesSwitch"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="16dp"
         app:layout_constraintStart_toEndOf="@+id/notifyRelatives"
@@ -148,10 +114,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:textStyle="bold"
+        android:layout_marginTop="32dp"
         android:text="@string/selectCategory"
         android:textColor="@color/TextColorBlue"
         android:textSize="36sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/title" />
 
@@ -160,9 +127,10 @@
         style="@android:style/Widget.DatePicker"
         android:layout_width="315dp"
         android:layout_height="194dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
         android:datePickerMode="spinner"
+        android:scrollbarSize="10dp"
         app:layout_constraintEnd_toStartOf="@+id/timePicker"
         app:layout_constraintTop_toBottomOf="@+id/date" />
 
@@ -170,53 +138,137 @@
         android:id="@+id/date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="60dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="80dp"
         android:text="@string/selectDateAndTime"
         android:textColor="@color/TextColorBlue"
         android:textSize="36sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/title" />
+        app:layout_constraintTop_toBottomOf="@+id/categoryTags" />
 
     <TimePicker
         android:id="@+id/timePicker"
         android:layout_width="315dp"
         android:layout_height="194dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
         android:timePickerMode="spinner"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/date" />
 
     <Button
         android:id="@+id/submit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="40dp"
-        android:layout_marginBottom="32dp"
-        android:background="@android:color/holo_orange_dark"
-        android:onClick="submitNotification"
-        android:text="@string/submit"
-        android:textAllCaps="false"
-        android:textColor="@android:color/background_light"
-        android:textSize="40sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <Button
-        android:id="@+id/cancel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="32dp"
         android:background="@android:color/holo_orange_dark"
-        android:onClick="cancel"
-        android:text="@string/cancel"
+        android:padding="10dp"
+        android:text="@string/submit"
+        android:onClick="submitNotification"
         android:textAllCaps="false"
         android:textColor="@android:color/background_light"
-        android:textSize="40sp"
         android:textStyle="bold"
+        app:autoSizeTextType="uniform"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/submit" />
+        app:layout_constraintDimensionRatio="7:2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent=".09" />
+
+    <Button
+        android:id="@+id/cancel"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginBottom="32dp"
+        android:background="@android:color/holo_orange_dark"
+        android:onClick="cancel"
+        android:padding="10dp"
+        android:text="Ακύρωση"
+        android:textAllCaps="false"
+        android:textColor="@android:color/background_light"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="7:2"
+        app:layout_constraintHeight_percent=".09"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <RelativeLayout
+        android:id="@+id/categoryTags"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="32dp"
+        android:labelFor="@id/title"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toEndOf="@+id/categoryText"
+        app:layout_constraintTop_toBottomOf="@+id/title">
+
+        <Button
+            android:id="@+id/healthTag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="30dp"
+            android:background="@android:color/holo_orange_dark"
+            android:checked="true"
+            android:onClick="selectTag"
+            android:padding="10dp"
+            android:scrollbarSize="10dp"
+            android:text="@string/health_tag"
+            android:textAllCaps="false"
+            android:textColor="@android:color/background_light"
+            android:textSize="36sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/eventTag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_toEndOf="@id/careTag"
+            android:background="@android:color/holo_orange_dark"
+            android:onClick="selectTag"
+            android:padding="10dp"
+            android:text="@string/event_tag"
+            android:textAllCaps="false"
+            android:textColor="@android:color/background_light"
+            android:textSize="36sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/careTag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_toEndOf="@+id/healthTag"
+            android:background="@android:color/holo_orange_dark"
+            android:onClick="selectTag"
+            android:padding="10dp"
+            android:text="@string/care_tag"
+            android:textAllCaps="false"
+            android:textColor="@android:color/background_light"
+            android:textSize="36sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/otherTag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_toEndOf="@id/eventTag"
+            android:background="@android:color/holo_orange_dark"
+            android:onClick="selectTag"
+            android:padding="10dp"
+            android:text="@string/other_tag"
+            android:textAllCaps="false"
+            android:textColor="@android:color/background_light"
+            android:textSize="36sp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
 
 </android.support.constraint.ConstraintLayout>

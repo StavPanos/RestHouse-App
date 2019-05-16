@@ -13,7 +13,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 
 public class NewNotificationActivity extends AppCompatActivity {
     Button selectDateButton, selectTimeButton, submitButton;
@@ -26,10 +28,12 @@ public class NewNotificationActivity extends AppCompatActivity {
     int currentHour;
     int currentMinute;
     String amPm;
+    String tag;
     Calendar calendar;
     DatePickerDialog datePickerDialog;
     TimePickerDialog timePickerDialog;
     DatabaseHandler db;
+    List<View> buttonList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,69 +50,68 @@ public class NewNotificationActivity extends AppCompatActivity {
         title = findViewById(R.id.titleEditText);
         submitButton = findViewById(R.id.submit);
 
-        selectDateButtonSetListener();
-        selectTimeButtonSetListener();
-        submitButtonSetListener();
+        health = findViewById(R.id.healthTag);
+        care = findViewById(R.id.careTag);
+        event = findViewById(R.id.eventTag);
+        other = findViewById(R.id.otherTag);
 
-    }
+        buttonList = new ArrayList<>();
 
-    private void selectDateButtonSetListener() {
-        selectDateButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                calendar = Calendar.getInstance();
-                year = calendar.get(Calendar.YEAR);
-                month = calendar.get(Calendar.MONTH);
-                dayOfMonth = calendar.get(Calendar.DAY_OF_MONTH);
-                datePickerDialog = new DatePickerDialog(NewNotificationActivity.this,
-                        new DatePickerDialog.OnDateSetListener() {
-                            @Override
-                            public void onDateSet(DatePicker datePicker, int year, int month, int day) {
-                                date.setText(day + "/" + (month + 1) + "/" + year);
-                            }
-                        }, year, month, dayOfMonth);
-                datePickerDialog.getDatePicker().setMinDate(System.currentTimeMillis());
-                datePickerDialog.show();
-            }
-        });
-    }
+        buttonList.add(health);
+        buttonList.add(care);
+        buttonList.add(event);
+        buttonList.add(other);
 
-    private void selectTimeButtonSetListener() {
-        selectTimeButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                calendar = Calendar.getInstance();
-                currentHour = calendar.get(Calendar.HOUR_OF_DAY);
-                currentMinute = calendar.get(Calendar.MINUTE);
-
-                timePickerDialog = new TimePickerDialog(NewNotificationActivity.this, new TimePickerDialog.OnTimeSetListener() {
-                    @Override
-                    public void onTimeSet(TimePicker timePicker, int hourOfDay, int minutes) {
-                        if (hourOfDay >= 12) {
-                            amPm = "PM";
-                        } else {
-                            amPm = "AM";
-                        }
-                        time.setText(String.format("%02d:%02d", hourOfDay, minutes) + amPm);
-                    }
-                }, currentHour, currentMinute, false);
-
-                timePickerDialog.show();
-            }
-        });
-    }
-
-    private void submitButtonSetListener() {
-        submitButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                db.addNotification(new Notification(title.getText().toString(),date.getText().toString(),time.getText().toString(),"category"));
-                startActivity(new Intent(NewNotificationActivity.this, NotificationTableActivity.class));
-            }
-        });
     }
 
     public void cancel(View view) {
         startActivity(new Intent(NewNotificationActivity.this, NotificationActivity.class));
+    }
+
+    public void selectTag(View view) {
+        Button selectedButton = findViewById(view.getId());
+        tag = selectedButton.getText().toString();
+        view.setBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
+        for (View temp : buttonList) {
+            if (!temp.equals(view)) {
+                temp.setBackgroundColor((getResources().getColor(R.color.orange)));
+            }
+        }
+    }
+
+    public void selectDate(View view) {
+        calendar = Calendar.getInstance();
+        year = calendar.get(Calendar.YEAR);
+        month = calendar.get(Calendar.MONTH);
+        dayOfMonth = calendar.get(Calendar.DAY_OF_MONTH);
+        datePickerDialog = new DatePickerDialog(NewNotificationActivity.this,
+                new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker datePicker, int year, int month, int day) {
+                        date.setText(day + "/" + (month + 1) + "/" + year);
+                    }
+                }, year, month, dayOfMonth);
+        datePickerDialog.getDatePicker().setMinDate(System.currentTimeMillis());
+        datePickerDialog.show();
+    }
+
+    public void selectTime(View view) {
+        calendar = Calendar.getInstance();
+        currentHour = calendar.get(Calendar.HOUR_OF_DAY);
+        currentMinute = calendar.get(Calendar.MINUTE);
+
+        timePickerDialog = new TimePickerDialog(NewNotificationActivity.this, new TimePickerDialog.OnTimeSetListener() {
+            @Override
+            public void onTimeSet(TimePicker timePicker, int hourOfDay, int minutes) {
+                time.setText(String.format("%02d:%02d", hourOfDay, minutes));
+            }
+        }, currentHour, currentMinute, true);
+
+        timePickerDialog.show();
+    }
+
+    public void submitNotification(View view) {
+        db.addNotification(new Notification(title.getText().toString(), date.getText().toString(), time.getText().toString(), tag));
+        startActivity(new Intent(NewNotificationActivity.this, NotificationTableActivity.class));
     }
 }

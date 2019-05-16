@@ -16,7 +16,7 @@
     <string name="setDateTimeText">Ορίστε ώρα και ημέρα υπενθύμισης</string>
     <string name="pick_time_text">Διάλεξε Ώρα</string>
     <string name="pick_date_text">Διάλεξε Ημερομηνία</string>
-    <string name="time_hint">ΩΩ:ΛΛπμ/αμ</string>
+    <string name="time_hint">ΩΩ:ΛΛ</string>
     <string name="date_hint">ΗΗ/ΜΜ/ΕΕ</string>
     <string name="submit">Καταχώρηση</string>
 
