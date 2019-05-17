@@ -6,22 +6,10 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/login_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginStart="322dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="321dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logInButton" />
-
     <TextView
         android:id="@+id/AppTitle"
-        android:layout_width="731dp"
-        android:layout_height="47dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:background="#FFFFFF"
         android:text="Είσοδος ΣΔΥ51 ΕΡΓ4"
         android:textAlignment="center"
@@ -38,12 +26,14 @@
         style="@style/Widget.AppCompat.Light.AutoCompleteTextView"
         android:layout_width="wrap_content"
         android:layout_height="45dp"
-        android:layout_marginStart="28dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:textAlignment="center"
         android:textColor="@android:color/background_light"
         android:textColorHint="@android:color/darker_gray"
+        app:layout_constraintEnd_toStartOf="@+id/guideline10"
         app:layout_constraintStart_toEndOf="@+id/textView"
         app:layout_constraintTop_toBottomOf="@+id/AppTitle" />
 
@@ -52,13 +42,13 @@
         style="@android:style/Widget.DeviceDefault.EditText"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
-        android:layout_marginStart="28dp"
+        android:layout_marginTop="24dp"
         android:ems="10"
         android:inputType="textPassword"
         android:textAlignment="center"
         android:textColor="@android:color/background_light"
         android:textColorHint="@android:color/darker_gray"
-        app:layout_constraintStart_toEndOf="@+id/textView2"
+        app:layout_constraintEnd_toStartOf="@+id/guideline10"
         app:layout_constraintTop_toBottomOf="@+id/usernameEditText" />
 
     <Button
@@ -66,18 +56,17 @@
         style="@android:style/Widget.Material.Button"
         android:layout_width="130dp"
         android:layout_height="50dp"
-        android:layout_marginStart="301dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="300dp"
+        android:layout_marginStart="188dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="194dp"
         android:background="#2196F3"
         android:drawableBottom="@android:drawable/divider_horizontal_dim_dark"
         android:onClick="logIn"
         android:text="ΣΥΝΔΕΣΗ"
         android:textAllCaps="false"
-        android:textAppearance="@style/TextAppearance.AppCompat.Widget.Button.Inverse"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline10"
+        app:layout_constraintStart_toEndOf="@+id/guideline9"
         app:layout_constraintTop_toBottomOf="@+id/passwordEditText" />
 
     <android.support.constraint.Guideline
@@ -89,28 +78,28 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="150dp"
+        android:layout_width="0dp"
         android:layout_height="45dp"
-        android:layout_marginStart="81dp"
-        android:layout_marginEnd="24dp"
+        android:layout_marginTop="24dp"
         android:text="Όνομα χρήστη"
         android:textAlignment="center"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/usernameEditText"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/guideline9"
         app:layout_constraintTop_toBottomOf="@+id/AppTitle" />
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="130dp"
+        android:layout_width="0dp"
         android:layout_height="45dp"
-        android:layout_marginStart="101dp"
+        android:layout_marginTop="24dp"
         android:text="Κωδικός"
         android:textAlignment="center"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/passwordEditText"
+        app:layout_constraintStart_toEndOf="@+id/guideline9"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <TextView
@@ -118,24 +107,51 @@
         android:layout_width="330dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="77dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="32dp"
         android:text='Αν δεν έχετε κάνει εγγραφή πατήστε το πορτοκαλί κουμπί "Εγγραφή"'
         android:textSize="19sp"
         app:layout_constraintEnd_toStartOf="@+id/SingUpButton"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/login_button" />
+        app:layout_constraintTop_toBottomOf="@+id/logInButton" />
 
     <Button
         android:id="@+id/SingUpButton"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="180dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="182dp"
         android:background="#FF9800"
         android:text="Εγγραφή"
         android:textColor="#F8F8F8"
-        app:layout_constraintStart_toEndOf="@+id/textView3"
-        app:layout_constraintTop_toBottomOf="@+id/login_button" />
+        app:layout_constraintEnd_toStartOf="@+id/guideline10"
+        app:layout_constraintStart_toEndOf="@+id/guideline9"
+        app:layout_constraintTop_toBottomOf="@+id/logInButton" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="333dp"
+        app:layout_constraintGuide_percent=".3" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="978dp"
+        app:layout_constraintGuide_percent=".7" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="561dp"
+        app:layout_constraintGuide_percent=".7" />
 
 </android.support.constraint.ConstraintLayout>
