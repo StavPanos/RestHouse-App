@@ -115,13 +115,13 @@
 
     <TextView
         android:id="@+id/categoryLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:text="@string/category_tag"
         android:textAlignment="center"
         android:textColor="@color/TextColorBlue"
-        android:textSize="36sp"
         android:textStyle="bold"
+        app:autoSizeTextType="uniform"
         app:layout_constraintBottom_toTopOf="@+id/guideline11"
         app:layout_constraintEnd_toStartOf="@+id/category"
         app:layout_constraintStart_toEndOf="@+id/guideline5"
@@ -129,12 +129,12 @@
 
     <TextView
         android:id="@+id/dateLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:text="@string/date_tag"
         android:textAlignment="center"
         android:textColor="@color/TextColorBlue"
-        android:textSize="36sp"
+        app:autoSizeTextType="uniform"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/guideline11"
         app:layout_constraintEnd_toStartOf="@+id/guideline4"
@@ -143,12 +143,12 @@
 
     <TextView
         android:id="@+id/timeLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:text="@string/time_tag"
         android:textAlignment="center"
         android:textColor="@color/TextColorBlue"
-        android:textSize="36sp"
+        app:autoSizeTextType="uniform"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/guideline11"
         app:layout_constraintEnd_toStartOf="@+id/guideline7"
@@ -157,12 +157,12 @@
 
     <TextView
         android:id="@+id/titleLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:text="@string/title_tag"
         android:textAlignment="center"
         android:textColor="@color/TextColorBlue"
-        android:textSize="36sp"
+        app:autoSizeTextType="uniform"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/guideline11"
         app:layout_constraintEnd_toStartOf="@+id/guideline8"
@@ -174,7 +174,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.2" />
+        app:layout_constraintGuide_percent=".22" />
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline4"
