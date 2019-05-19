@@ -1,6 +1,7 @@
 
 package com.example.sdy51_e4;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -60,10 +61,10 @@ public class NotificationTableActivity extends AppCompatActivity {
             time.setText(ntf.getTime());
             category.setText(ntf.getCategory());
 
-            title.setWidth(650);
-            date.setWidth(450);
-            time.setWidth(400);
-            category.setWidth(430);
+            title.setWidth(350);
+            date.setWidth(250);
+            time.setWidth(200);
+            category.setWidth(210);
 
             newNotificationRow.addView(category);
             newNotificationRow.addView(date);
@@ -86,5 +87,13 @@ public class NotificationTableActivity extends AppCompatActivity {
                 }
             });
         }
+    }
+
+    public void goBack(View view) {
+        startActivity(new Intent(NotificationTableActivity.this, NotificationActivity.class));
+    }
+
+    public void exit(View view) {
+        startActivity(new Intent(NotificationTableActivity.this, MainActivity.class));
     }
 }

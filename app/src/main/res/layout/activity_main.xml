@@ -11,7 +11,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="#FFFFFF"
-        android:text="Είσοδος ΣΔΥ51 ΕΡΓ4"
+        android:text="Είσοδος ΣΔΥ51 ΕΡΓ5"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="#FF9800"

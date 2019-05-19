@@ -8,5 +8,5 @@
     android:background="@drawable/cell_border"
     android:textColor="@android:color/black"
     android:textAlignment="center"
-    android:textSize="36sp"
+    android:textSize="24sp"
     android:textStyle="bold" />

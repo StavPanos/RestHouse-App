@@ -29,4 +29,12 @@ public class NotificationActivity extends AppCompatActivity {
     public void showNotifications(View view) {
         startActivity(new Intent(NotificationActivity.this, NotificationTableActivity.class));
     }
+
+    public void goBack(View view) {
+        startActivity(new Intent(NotificationActivity.this, MainActivity.class));
+    }
+
+    public void exit(View view) {
+        startActivity(new Intent(NotificationActivity.this, MainActivity.class));
+    }
 }

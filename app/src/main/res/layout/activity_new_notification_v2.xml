@@ -44,10 +44,10 @@
         android:background="@drawable/cell_border"
         android:textColor="@color/TextColorBlue"
         app:autoSizeTextType="uniform"
-        app:layout_constraintWidth_percent=".3"
-        app:layout_constraintHeight_percent=".08"
+        app:layout_constraintHeight_percent=".12"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addtitle" />
+        app:layout_constraintTop_toBottomOf="@+id/addtitle"
+        app:layout_constraintWidth_percent=".3" />
 
     <TextView
         android:id="@+id/notifyRelatives"

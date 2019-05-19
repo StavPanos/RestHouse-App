@@ -96,6 +96,7 @@ public class NewNotificationActivity extends AppCompatActivity {
         calendar = Calendar.getInstance();
         currentHour = calendar.get(Calendar.HOUR_OF_DAY);
         currentMinute = calendar.get(Calendar.MINUTE);
+        calendar.set(Calendar.SECOND, 0);
 
         timePickerDialog = new TimePickerDialog(NewNotificationActivity.this, new TimePickerDialog.OnTimeSetListener() {
             @Override
@@ -105,6 +106,7 @@ public class NewNotificationActivity extends AppCompatActivity {
         }, currentHour, currentMinute, true);
 
         timePickerDialog.show();
+        startAlarm(calendar);
     }
 
     public void submitNotification(View view) {
