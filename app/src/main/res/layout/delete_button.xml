@@ -5,9 +5,11 @@
     android:layout_height="match_parent"
     android:layout_weight="1"
     android:background="@android:color/holo_red_dark"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
     android:text="Διαγραφή"
     android:textAllCaps="false"
     android:textColor="@android:color/background_light"
-    android:textSize="24sp" >
+    android:textSize="24sp">
 
 </Button>

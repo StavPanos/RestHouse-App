@@ -61,9 +61,9 @@ public class NotificationTableActivity extends AppCompatActivity {
             time.setText(ntf.getTime());
             category.setText(ntf.getCategory());
 
-            title.setWidth(350);
-            date.setWidth(250);
-            time.setWidth(200);
+            title.setWidth(370);
+            date.setWidth(220);
+            time.setWidth(190);
             category.setWidth(210);
 
             newNotificationRow.addView(category);

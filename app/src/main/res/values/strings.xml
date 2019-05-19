@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SDY51_E4</string>
+    <string name="app_name">SDY51_E5</string>
     <string name="return_button">ΕΠΙΣΤΡΟΦΗ</string>
     <string name="exit_button">ΤΕΡΜΑΤΙΣΜΟΣ</string>
     <string name="notifications_title">ΥΠΕΝΘΥΜΙΣΕΙΣ</string>
@@ -25,7 +25,7 @@
     <string name="selectDateAndTime">Επέλεξε ημερομηνία και ώρα</string>
     <string name="selectCategory">Επιλογή κατηγορίας</string>
     <string name="notifyCurator">Να ειδοποιηθεί ο φροντιστής μου</string>
-    <string name="notifyEveryday">Υπενθίμηση Καθημερινά</string>
+    <string name="notifyEveryday">Υπενθύμιση Καθημερινά</string>
     <string name="notifyRelatives">Να ειδοποιηθούν οι δικοί μου</string>
     <string name="description">Περιγραφή με λεπτομέρειες</string>
     <string name="enterTitle">Εισάγεται τίτλο</string>
