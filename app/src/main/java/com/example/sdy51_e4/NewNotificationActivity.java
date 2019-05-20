@@ -1,10 +1,7 @@
 package com.example.sdy51_e4;
 
-import android.app.AlarmManager;
 import android.app.DatePickerDialog;
-import android.app.PendingIntent;
 import android.app.TimePickerDialog;
-import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -15,7 +12,6 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TimePicker;
-
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
@@ -58,7 +54,6 @@ public class NewNotificationActivity extends AppCompatActivity {
         buttonList.add(care);
         buttonList.add(event);
         buttonList.add(other);
-
     }
 
     public void cancel(View view) {
@@ -106,23 +101,10 @@ public class NewNotificationActivity extends AppCompatActivity {
         }, currentHour, currentMinute, true);
 
         timePickerDialog.show();
-        startAlarm(calendar);
     }
 
     public void submitNotification(View view) {
         db.addNotification(new Notification(title.getText().toString(), date.getText().toString(), time.getText().toString(), tag));
         startActivity(new Intent(NewNotificationActivity.this, NotificationTableActivity.class));
-    }
-
-    private void startAlarm(Calendar c) {
-        AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
-        Intent intent = new Intent(this, AlarmReceiver.class);
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 1, intent, 0);
-
-        if (c.before(Calendar.getInstance())) {
-            c.add(Calendar.DATE, 1);
-        }
-
-        alarmManager.setExact(AlarmManager.RTC_WAKEUP, c.getTimeInMillis(), pendingIntent);
     }
 }
