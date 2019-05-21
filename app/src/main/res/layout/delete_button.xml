@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Button xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/deleteButton"
     android:layout_width="80dp"
     android:layout_height="match_parent"
     android:layout_weight="1"
     android:background="@android:color/holo_red_dark"
-    android:paddingLeft="20dp"
-    android:paddingRight="20dp"
+    android:paddingLeft="5dp"
+    android:paddingRight="5dp"
+    android:maxHeight="50dp"
+    android:minHeight="50dp"
     android:text="Διαγραφή"
     android:textAllCaps="false"
     android:textColor="@android:color/background_light"
-    android:textSize="24sp">
+    app:autoSizeTextType="uniform">
 
 </Button>

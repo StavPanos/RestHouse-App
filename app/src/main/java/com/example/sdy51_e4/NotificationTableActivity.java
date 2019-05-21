@@ -28,7 +28,7 @@ public class NotificationTableActivity extends AppCompatActivity {
 
         db = new DatabaseHandler(this);
 
-        viewList = new ArrayList<View>();
+        viewList = new ArrayList<>();
         notificationTable = findViewById(R.id.notificationTable);
 
         refreshNotificationTable();
@@ -44,6 +44,8 @@ public class NotificationTableActivity extends AppCompatActivity {
             Log.d("Notification: ", log);
 
             LinearLayout newNotificationRow = new LinearLayout(this);
+            //LinearLayout.LayoutParams param = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+            //newNotificationRow.setLayoutParams(param);
             notificationTable.addView(newNotificationRow);
             viewList.add(newNotificationRow);
 

@@ -19,7 +19,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     private static final String KEY_TIME = "time";
     private static final String KEY_CATEGORY = "category";
 
-    public DatabaseHandler(Context context) {
+    DatabaseHandler(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
@@ -54,8 +54,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         db.close(); // Closing database connection
     }
 
-    public List<Notification> getAllNotifications() {
-        List<Notification> contactList = new ArrayList<Notification>();
+    List<Notification> getAllNotifications() {
+        List<Notification> contactList = new ArrayList<>();
 
         String selectQuery = "SELECT  * FROM " + TABLE_NOTIFICATIONS;
 
@@ -78,19 +78,19 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         return contactList;
     }
 
-    public void deleteNotification(Notification notification) {
+    void deleteNotification(Notification notification) {
         SQLiteDatabase db = this.getWritableDatabase();
         db.delete(TABLE_NOTIFICATIONS, KEY_ID + " = ?",
                 new String[] { String.valueOf(notification.getId()) });
         db.close();
     }
 
-    public int getNotificationsCount() {
+    /*public int getNotificationsCount() {
         String countQuery = "SELECT  * FROM " + TABLE_NOTIFICATIONS;
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery(countQuery, null);
         cursor.close();
 
         return cursor.getCount();
-    }
+    }*/
 }

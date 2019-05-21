@@ -80,7 +80,8 @@ public class NewNotificationActivity extends AppCompatActivity {
                 new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker datePicker, int year, int month, int day) {
-                        date.setText(day + "/" + (month + 1) + "/" + year);
+                        String selectedDate = day + "/" + (month + 1) + "/" + year;
+                        date.setText(selectedDate);
                     }
                 }, year, month, dayOfMonth);
         datePickerDialog.getDatePicker().setMinDate(System.currentTimeMillis());
@@ -96,7 +97,8 @@ public class NewNotificationActivity extends AppCompatActivity {
         timePickerDialog = new TimePickerDialog(NewNotificationActivity.this, new TimePickerDialog.OnTimeSetListener() {
             @Override
             public void onTimeSet(TimePicker timePicker, int hourOfDay, int minutes) {
-                time.setText(String.format("%02d:%02d", hourOfDay, minutes));
+                String selectedTime = hourOfDay+":"+minutes;
+                time.setText(selectedTime);
             }
         }, currentHour, currentMinute, true);
 

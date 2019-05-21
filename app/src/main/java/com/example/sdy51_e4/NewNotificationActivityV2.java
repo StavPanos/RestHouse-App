@@ -61,18 +61,14 @@ public class NewNotificationActivityV2 extends AppCompatActivity {
     }
 
     public String getCurrentDate() {
-        StringBuilder builder = new StringBuilder();
-        builder.append((date.getMonth() + 1) + "/");
-        builder.append(date.getDayOfMonth() + "/");
-        builder.append(date.getYear());
-        return builder.toString();
+        return ((date.getMonth() + 1) + "/") +
+                date.getDayOfMonth() + "/" +
+                date.getYear();
     }
 
     public String getCurrentTime() {
-        StringBuilder builder = new StringBuilder();
-        builder.append((time.getCurrentHour()) + ":");
-        builder.append(time.getCurrentMinute());
-        return builder.toString();
+        return ((time.getCurrentHour()) + ":") +
+                time.getCurrentMinute();
     }
 
     public void selectTag(View view) {

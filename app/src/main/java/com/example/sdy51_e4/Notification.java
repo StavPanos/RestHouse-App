@@ -1,23 +1,15 @@
 package com.example.sdy51_e4;
 
 public class Notification {
-    int id;
-    String title;
-    String date;
-    String time;
-    String category;
+    private int id;
+    private String title;
+    private String date;
+    private String time;
+    private String category;
 
-    public Notification(){}
+    Notification(){}
 
-    public Notification(int id, String title, String date, String time, String category) {
-        this.id = id;
-        this.date = date;
-        this.category = category;
-        this.time = time;
-        this.title = title;
-    }
-
-    public Notification(String title, String date, String time, String category) {
+    Notification(String title, String date, String time, String category) {
         this.date = date;
         this.category = category;
         this.time = time;
@@ -32,35 +24,35 @@ public class Notification {
         this.id = id;
     }
 
-    public String getTitle(){
+    String getTitle(){
         return this.title;
     }
 
-    public void setTitle(String title){
+    void setTitle(String title){
         this.title = title;
     }
 
-    public String getDate(){
+    String getDate(){
         return this.date;
     }
 
-    public void setDate(String date){
+    void setDate(String date){
         this.date = date;
     }
 
-    public String getTime(){
+    String getTime(){
         return this.time;
     }
 
-    public void setTime(String time){
+    void setTime(String time){
         this.time = time;
     }
 
-    public String getCategory(){
+    String getCategory(){
         return this.category;
     }
 
-    public void setCategory(String category){
+    void setCategory(String category){
         this.category = category;
     }
 }

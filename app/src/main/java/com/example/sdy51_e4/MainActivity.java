@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
 
-        logInButton = (Button)findViewById(R.id.logInButton);
+        logInButton = findViewById(R.id.logInButton);
     }
 
     public void logIn(View v) {
