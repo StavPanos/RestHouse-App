@@ -44,8 +44,8 @@ public class NotificationTableActivity extends AppCompatActivity {
             Log.d("Notification: ", log);
 
             LinearLayout newNotificationRow = new LinearLayout(this);
-            //LinearLayout.LayoutParams param = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-            //newNotificationRow.setLayoutParams(param);
+            //LinearLayout.LayoutParams param = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT);
+            //.setLayoutParams(param);
             notificationTable.addView(newNotificationRow);
             viewList.add(newNotificationRow);
 
@@ -63,10 +63,10 @@ public class NotificationTableActivity extends AppCompatActivity {
             time.setText(ntf.getTime());
             category.setText(ntf.getCategory());
 
-            title.setWidth(370);
-            date.setWidth(220);
-            time.setWidth(190);
-            category.setWidth(210);
+            title.setWidth(400);
+            date.setWidth(250);
+            time.setWidth(200);
+            category.setWidth(250);
 
             newNotificationRow.addView(category);
             newNotificationRow.addView(date);
